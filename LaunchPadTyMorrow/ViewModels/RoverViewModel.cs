@@ -11,5 +11,10 @@
 		{
 			Model = new RoverModel();
 		}
+
+		public void Rove()
+		{
+			
+		}
 	}
 }
