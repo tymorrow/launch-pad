@@ -20,6 +20,7 @@
 		public ConsoleViewModel()
 		{
 			Model = new ConsoleModel();
+			Text = "Welcome to Launch Pad!";
 		}
 
 	}
