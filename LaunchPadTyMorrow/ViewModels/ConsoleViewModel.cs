@@ -22,7 +22,7 @@
 		{
 			Model = new ConsoleModel();
 			mainWindow = mw;
-			Text = "Welcome to Launch Pad!" + System.Environment.NewLine;
+			Print("Welcome to Launch Pad!");
 		}
 
 		public void Clear()
@@ -31,11 +31,15 @@
 		}
 		public void Connect()
 		{
-			Text += "Connected!" + System.Environment.NewLine;
+			Print("Connected!");
 		}
 		public void Disconnect()
 		{
-			Text += "Disconnected!" + System.Environment.NewLine;
+			Print("Disconnected!");
+		}
+		public void Print(string message)
+		{
+			Text += message + System.Environment.NewLine;
 		}
 	}
 }
