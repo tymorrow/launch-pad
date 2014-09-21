@@ -14,7 +14,7 @@
                 <RowDefinition Height="7*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
             </Grid.RowDefinitions>
-            <GroupBox x:Name="RoverName" Margin="5" Padding="5">
+            <GroupBox Header="{Binding RoverName}" Margin="5" Padding="5">
                 <StackPanel>
                     <Label FontWeight="Bold">Speed</Label>
                     <TextBlock x:Name="Speed" Margin="5 0" />

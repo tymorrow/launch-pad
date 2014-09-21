@@ -7,7 +7,6 @@
 		public RoverView()
 		{
 			InitializeComponent();
-			DataContext = new RoverViewModel();
 		}
 	}
 }

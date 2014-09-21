@@ -6,6 +6,7 @@
 	class ConsoleViewModel : PropertyChangedBase
 	{
 		private ConsoleModel Model;
+		private MainWindowViewModel mainWindow;
 
 		public string Text
 		{
@@ -17,11 +18,30 @@
 			}
 		}
 
-		public ConsoleViewModel()
+		public ConsoleViewModel(MainWindowViewModel mw)
 		{
 			Model = new ConsoleModel();
-			Text = "Welcome to Launch Pad!";
+			mainWindow = mw;
+			Print("Welcome to Launch Pad!");
 		}
 
+		public void Clear()
+		{
+			Text = string.Empty;
+		}
+		public void Connect()
+		{
+			mainWindow.Rover.IsConnected = true;
+			Print("Connected!");
+		}
+		public void Disconnect()
+		{
+			mainWindow.Rover.IsConnected = false;
+			Print("Disconnected!");
+		}
+		public void Print(string message)
+		{
+			Text += message + System.Environment.NewLine;
+		}
 	}
 }

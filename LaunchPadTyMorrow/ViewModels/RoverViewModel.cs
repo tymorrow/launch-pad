@@ -1,11 +1,13 @@
 ﻿namespace LaunchPadTyMorrow.ViewModels
 {
+	using System.Threading.Tasks;
 	using Caliburn.Micro;
 	using Models;
 
 	class RoverViewModel : PropertyChangedBase
 	{
 		private RoverModel Model;
+		private MainWindowViewModel mainWindow;
 
 		public string RoverName
 		{
@@ -44,14 +46,42 @@
 			}
 		}
 
-		public RoverViewModel()
+		public RoverViewModel(MainWindowViewModel mw)
 		{
-			Model = new RoverModel();
+			Model = new RoverModel
+			{
+				roverName = "Phoenix I"
+			};
+			mainWindow = mw;
 		}
 
 		public void Rove()
 		{
-			
+			if (IsConnected)
+			{
+				Task.Run(async () =>
+				{
+					mainWindow.Console.Print("Roving!");
+					Temperature = 50;
+					for (var i = 0; i < 15; i++)
+					{
+						Speed = i;
+						Temperature += i / 4.0;
+						await Task.Delay(200);
+					}
+					for (var i = 14; i >= 0; i--)
+					{
+						Speed = i;
+						Temperature -= i / 4.0;
+						await Task.Delay(200);
+					}
+					mainWindow.Console.Print("Finished roving!");
+				});
+			}
+			else
+			{
+				mainWindow.Console.Print("The rover needs a connection to rove!");
+			}
 		}
 	}
 }
