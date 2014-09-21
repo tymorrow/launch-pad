@@ -1,6 +1,15 @@
 ﻿namespace LaunchPadTyMorrow.ViewModels
 {
-	class RoverViewModel
+	using Caliburn.Micro;
+	using Models;
+
+	class RoverViewModel : PropertyChangedBase
 	{
+		private RoverModel Model;
+
+		public RoverViewModel()
+		{
+			Model = new RoverModel();
+		}
 	}
 }
