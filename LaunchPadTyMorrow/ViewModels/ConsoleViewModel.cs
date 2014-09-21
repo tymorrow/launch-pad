@@ -31,10 +31,12 @@
 		}
 		public void Connect()
 		{
+			mainWindow.Rover.IsConnected = true;
 			Print("Connected!");
 		}
 		public void Disconnect()
 		{
+			mainWindow.Rover.IsConnected = false;
 			Print("Disconnected!");
 		}
 		public void Print(string message)
