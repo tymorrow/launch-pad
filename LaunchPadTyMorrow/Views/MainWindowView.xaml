@@ -6,7 +6,10 @@
         Title="MainWindow" Height="350" Width="525">
     <Window.Resources>
         <DataTemplate DataType="{x:Type vms:ConsoleViewModel}">
-            <views:ConsoleView/>
+            <views:ConsoleView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vms:RoverViewModel}">
+            <views:RoverView />
         </DataTemplate>
     </Window.Resources>
     <Grid>
