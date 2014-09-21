@@ -7,7 +7,6 @@
 		public ConsoleView()
 		{
 			InitializeComponent();
-			DataContext = new ConsoleViewModel();
 		}
 	}
 }

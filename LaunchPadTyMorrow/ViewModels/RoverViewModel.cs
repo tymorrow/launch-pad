@@ -7,6 +7,7 @@
 	class RoverViewModel : PropertyChangedBase
 	{
 		private RoverModel Model;
+		private MainWindowViewModel mainWindow;
 
 		public string RoverName
 		{
@@ -45,12 +46,13 @@
 			}
 		}
 
-		public RoverViewModel()
+		public RoverViewModel(MainWindowViewModel mw)
 		{
 			Model = new RoverModel
 			{
 				roverName = "Phoenix I"
 			};
+			mainWindow = mw;
 		}
 
 		public void Rove()

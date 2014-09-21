@@ -6,6 +6,7 @@
 	class ConsoleViewModel : PropertyChangedBase
 	{
 		private ConsoleModel Model;
+		private MainWindowViewModel mainWindow;
 
 		public string Text
 		{
@@ -17,9 +18,10 @@
 			}
 		}
 
-		public ConsoleViewModel()
+		public ConsoleViewModel(MainWindowViewModel mw)
 		{
 			Model = new ConsoleModel();
+			mainWindow = mw;
 			Text = "Welcome to Launch Pad!" + System.Environment.NewLine;
 		}
 
