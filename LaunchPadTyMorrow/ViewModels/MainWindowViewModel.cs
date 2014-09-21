@@ -30,7 +30,8 @@
 		{
 			Model = new MainWindowModel
 			{
-				console = new ConsoleViewModel()
+				console = new ConsoleViewModel(),
+				rover = new RoverViewModel()
 			};
 		}
 	}

@@ -7,13 +7,13 @@
 	{
 		private RoverModel Model;
 
-		public string Name
+		public string RoverName
 		{
-			get { return Model.name; }
+			get { return Model.roverName; }
 			set
 			{
-				Model.name = value;
-				NotifyOfPropertyChange(() => Name);
+				Model.roverName = value;
+				NotifyOfPropertyChange(() => RoverName);
 			}
 		}
 		public int Speed
