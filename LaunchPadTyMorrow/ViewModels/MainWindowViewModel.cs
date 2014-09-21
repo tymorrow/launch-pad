@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace LaunchPadTyMorrow.ViewModels
 {
+	using Caliburn.Micro;
 	using Models;
 
-	class MainWindowViewModel
+	class MainWindowViewModel : PropertyChangedBase
 	{
 		private MainWindowModel Model;
 
