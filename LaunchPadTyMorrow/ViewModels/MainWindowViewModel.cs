@@ -16,6 +16,15 @@
 				NotifyOfPropertyChange(() => Console);
 			}
 		}
+		public RoverViewModel Rover
+		{
+			get { return Model.rover; }
+			set
+			{
+				Model.rover = value;
+				NotifyOfPropertyChange(() => Rover);
+			}
+		}
 
 		public MainWindowViewModel()
 		{
