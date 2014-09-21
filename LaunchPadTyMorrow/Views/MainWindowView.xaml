@@ -10,6 +10,12 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
-        <ContentControl x:Name="Console" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        
+        <ContentControl Grid.Column="1" x:Name="Console" />
+        <ContentControl Grid.Column="0" x:Name="Rover" />
     </Grid>
 </Window>
