@@ -1,5 +1,6 @@
 ﻿namespace LaunchPadTyMorrow.ViewModels
 {
+	using System.Threading.Tasks;
 	using Caliburn.Micro;
 	using Models;
 
@@ -46,12 +47,37 @@
 
 		public RoverViewModel()
 		{
-			Model = new RoverModel();
+			Model = new RoverModel
+			{
+				roverName = "Phoenix I"
+			};
 		}
 
 		public void Rove()
 		{
-			
+			if (IsConnected)
+			{
+				Task.Run(async () =>
+				{
+					Temperature = 50;
+					for (var i = 0; i < 15; i++)
+					{
+						Speed = i;
+						Temperature += i / 4.0;
+						await Task.Delay(200);
+					}
+					for (var i = 14; i >= 0; i--)
+					{
+						Speed = i;
+						Temperature -= i / 4.0;
+						await Task.Delay(200);
+					}
+				});
+			}
+			else
+			{
+				// Something later
+			}
 		}
 	}
 }
