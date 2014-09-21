@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 
 namespace LaunchPadTyMorrow.Views
 {
+	using ViewModels;
+
 	/// <summary>
 	/// Interaction logic for ConsoleView.xaml
 	/// </summary>
@@ -23,6 +25,7 @@ namespace LaunchPadTyMorrow.Views
 		public ConsoleView()
 		{
 			InitializeComponent();
+			this.DataContext = new ConsoleViewModel();
 		}
 	}
 }
