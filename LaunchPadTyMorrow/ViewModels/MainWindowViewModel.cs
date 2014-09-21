@@ -7,9 +7,22 @@
 	{
 		private MainWindowModel Model;
 
+		public ConsoleViewModel Console
+		{
+			get { return Model.console; }
+			set
+			{
+				Model.console = value;
+				NotifyOfPropertyChange(() => Console);
+			}
+		}
+
 		public MainWindowViewModel()
 		{
-			Model = new MainWindowModel();
+			Model = new MainWindowModel
+			{
+				console = new ConsoleViewModel()
+			};
 		}
 	}
 }
