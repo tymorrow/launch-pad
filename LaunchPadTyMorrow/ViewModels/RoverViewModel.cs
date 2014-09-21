@@ -61,6 +61,7 @@
 			{
 				Task.Run(async () =>
 				{
+					mainWindow.Console.Print("Roving!");
 					Temperature = 50;
 					for (var i = 0; i < 15; i++)
 					{
@@ -74,11 +75,12 @@
 						Temperature -= i / 4.0;
 						await Task.Delay(200);
 					}
+					mainWindow.Console.Print("Finished roving!");
 				});
 			}
 			else
 			{
-				// Something later
+				mainWindow.Console.Print("The rover needs a connection to rove!");
 			}
 		}
 	}
