@@ -20,8 +20,20 @@
 		public ConsoleViewModel()
 		{
 			Model = new ConsoleModel();
-			Text = "Welcome to Launch Pad!";
+			Text = "Welcome to Launch Pad!" + System.Environment.NewLine;
 		}
 
+		public void Clear()
+		{
+			Text = string.Empty;
+		}
+		public void Connect()
+		{
+			Text += "Connected!" + System.Environment.NewLine;
+		}
+		public void Disconnect()
+		{
+			Text += "Disconnected!" + System.Environment.NewLine;
+		}
 	}
 }
