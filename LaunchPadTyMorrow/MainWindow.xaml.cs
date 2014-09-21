@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 
 namespace LaunchPadTyMorrow
 {
+	using ViewModels;
+
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
 	/// </summary>
@@ -23,6 +25,7 @@ namespace LaunchPadTyMorrow
 		public MainWindow()
 		{
 			InitializeComponent();
+			this.DataContext = new MainWindowViewModel();
 		}
 	}
 }
