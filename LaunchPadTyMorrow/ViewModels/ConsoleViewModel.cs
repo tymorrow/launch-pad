@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace LaunchPadTyMorrow.ViewModels
 {
+	using Caliburn.Micro;
 	using Models;
 
-	class ConsoleViewModel
+	class ConsoleViewModel : PropertyChangedBase
 	{
 		private ConsoleModel Model;
 
